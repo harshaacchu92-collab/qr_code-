@@ -5,9 +5,9 @@ from PIL import Image
 st.title("Qr code generator")
 data=st.text_input("enter url")
 if st.button("generate QR"):
-if data:
-    qr=qrcode.make(data)
-    qr.save("qr.png")
+    if data:
+        qr=qrcode.make(data)
+        qr.save("qr.png")
   
   img =Image.open("qr.png")
   st.image("img,caption="Generated QR code")
